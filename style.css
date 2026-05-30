@@ -1,8 +1,9 @@
 body {
-  background-color: #f5f7fb;
-}
-body {
+  background: linear-gradient(135deg, #f4f7ff, #eef2ff);
+  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
+
+  min-height: 100vh;
 }
 .navbar {
   padding-top: 15px;
@@ -10,13 +11,301 @@ body {
 }
 .card {
   transition: 0.3s;
+
   cursor: pointer;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 .active {
   text-decoration: line-through;
+
   opacity: 0.7;
+
+  background-color: #d1fae5 !important;
+
+  border-left: 5px solid #10b981;
+}
+.dark-mode {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+}
+.dark-mode .card {
+  background: linear-gradient(135deg, #020617, #0f172a);
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode .list-group-item {
+  background: #111827;
+  color: white;
+  border-color: #374151;
+}
+.dark-mode input {
+  background: #1f2937;
+  color: white;
+  border: 1px solid #374151;
+}
+
+.dark-mode .text-muted {
+  color: #9ca3af !important;
+}
+
+.dark-mode .timer-card {
+  background: linear-gradient(135deg, #020617, #0f172a);
+}
+.dark-mode .list-group-item {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+.dark-mode .form-control {
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.dark-mode .list-group-item {
+  background: rgba(255, 255, 255, 0.03);
+
+  color: white;
+
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .form-control::placeholder {
+  color: #aaa;
+}
+.chart-size {
+  width: 100%;
+  height: 350px !important;
+}
+.sidebar-item {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-item:hover {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+
+  color: white;
+
+  transform: translateX(5px);
+}
+
+/* AI INSIGHTS */
+#aiInsights {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 20px;
+}
+
+.insight-box {
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
+
+  border-radius: 12px;
+
+  padding: 14px;
+
+  font-weight: 500;
+
+  font-size: 14px;
+
+  border-left: 4px solid #6366f1;
+
+  transition: 0.3s;
+
+  min-height: 60px;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.insight-box:hover {
+  transform: translateX(5px);
+}
+
+.dark-mode .insight-box {
+  background: rgba(255, 255, 255, 0.06);
+
+  color: white;
+
+  border-left: 4px solid #6366f1;
+}
+/* REMINDER BOX */
+
+.dark-mode .reminder-box {
+  background: rgba(255, 255, 255, 0.06);
+
+  color: white;
+
+  border-left: 4px solid #f59e0b;
+}
+
+/* SUGGESTION BOX */
+
+.suggestion-box {
+  background: #f8fafc;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  font-weight: 500;
+
+  border-left: 5px solid #10b981;
+}
+/* TASK CARD */
+
+.task-card {
+  height: 500px;
+}
+
+/* TASK SCROLL AREA */
+
+.task-card {
+  height: 500px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.task-list-wrapper {
+  flex: 1;
+
+  overflow-y: auto;
+
+  min-height: 0;
+
+  padding-right: 8px;
+}
+
+.task-list-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-list-wrapper::-webkit-scrollbar-track {
+  background: #eef2ff;
+
+  border-radius: 10px;
+}
+
+.task-list-wrapper::-webkit-scrollbar-thumb {
+  background: #d0d0d6;
+
+  border-radius: 10px;
+}
+
+.task-list-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #d6d5e2;
+}
+/* TIME TRACKER */
+
+.timer-card {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+
+  color: white;
+
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.ai-card,
+.reminder-card,
+.timer-card {
+  height: 320px;
+}
+.current-project small {
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.current-project h5 {
+  color: white;
+
+  font-weight: 600;
+
+  margin: 0;
+}
+/* #aiInsights {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  max-height: 220px;
+
+  overflow-x: auto;
+} */
+#remindersContainer {
+  max-height: 220px;
+
+  overflow-y: auto;
+}
+.sidebar-content-box {
+  background: rgba(99, 102, 241, 0.08);
+
+  border-radius: 16px;
+
+  padding: 18px;
+
+  margin-top: 12px;
+
+  font-size: 14px;
+
+  border-left: 4px solid #6366f1;
+
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dark-mode .sidebar-content-box {
+  background: rgba(255, 255, 255, 0.06);
+
+  color: white;
 }
